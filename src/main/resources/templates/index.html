@@ -1,13 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-      <title>Currency Controller</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 150px;
+            margin: 5% auto;
+            border: 5px solid black;
+        }
 
-    <h1>Currency Converter</h1>
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            margin: 0px auto;
+        }
+    </style>
+    <script>
+        function convertCurrency() {
+            var from = document.getElementById("from").value;
+            var to = document.getElementById("to").value;
+            var xmlhttp = new XMLHttpRequest();
+            var url = "http://api.fixer.io/latest?symbols=" + from + "," + to;
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var result = xmlhttp.responseText;
+                    alert(result);
+                    var jsResult = JSON.parse(result);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="convertCurrency();">
+<div id="box">
+    <h2>Currency Converter v.1</h2>
+    <table>
+        <tr>
+            <td><input id="fromAmount" type="text" size="15" value="1"/></td>
+            <td>
+                <select id="from" onchange="convertCurrency();">
+                    <option value="AUD" selected>Австралийский доллар (AUD)</option>
+                    <option value="AZN">Азербайджанский манат (AZN)</option>
+                    <option value="GBP">Фунт стерлингов Соединенного королевства (GBP)</option>
+                    <option value="AMD">Армянских драмов (AMD)</option>
+                    <option value="BYN">Белорусский рубль (BYN)</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input id="toAmount" type="text" size="15" disabled/></td>
+            <td>
+                <select id="to" onchange="convertCurrency();">
+                    <option value="AUD">Австралийский доллар (AUD)</option>
+                    <option value="AZN" selected>Азербайджанский манат (AZN)</option>
+                    <option value="GBP">Фунт стерлингов Соединенного королевства (GBP)</option>
+                    <option value="AMD">Армянских драмов (AMD)</option>
+                    <option value="BYN">Белорусский рубль (BYN)</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
 
 
-    </body>
+</body>
 </html>

@@ -2,6 +2,7 @@ package ru.currencyconverter;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,8 +21,8 @@ public class DefaultController {
     private Object valuteName;
     private Object valuteValue;
 
-    
-    @RequestMapping("/volute")
+
+    @GetMapping("/currency")
     public Object parser() throws Exception {
 
         URL url = new URL("https://www.cbr-xml-daily.ru/daily_json.js");//Создает объект URL с путем к странице
@@ -39,9 +40,10 @@ public class DefaultController {
         return valuteName + " " + valuteValue;
     }
 
-    @RequestMapping("/index")
-    public String index() {
 
-        return (new Date().toString());
-    }
+//    @RequestMapping ("/index")
+//    public String index() {
+//
+//        return index;
+//    }
 }
