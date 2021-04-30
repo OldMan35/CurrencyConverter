@@ -2,6 +2,7 @@ HELP.md
 target/
 
 
+
 ### STS ###
 .apt_generated
 .classpath
@@ -12,6 +13,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
+
 *.iws
 *.iml
 *.ipr
@@ -28,6 +30,8 @@ build/
 
 ### VS Code ###
 .vscode/
+.idea/
+.mvn/
 
 
 
