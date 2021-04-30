@@ -20,6 +20,7 @@ public class DefaultController {
     private Object valuteName;
     private Object valuteValue;
 
+    
     @RequestMapping("/volute")
     public Object parser() throws Exception {
 
