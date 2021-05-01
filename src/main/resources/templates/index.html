@@ -24,14 +24,16 @@
             var from = document.getElementById("from").value;
             var to = document.getElementById("to").value;
             var xmlhttp = new XMLHttpRequest();
-            var url = "http://api.fixer.io/latest?symbols=" + from + "," + to;
+            var url = "https://www.cbr-xml-daily.ru/daily_json.js";
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     var result = xmlhttp.responseText;
-                    alert(result);
                     var jsResult = JSON.parse(result);
+                    var oneUnit = jsResult.Valute[to] / jsResult.Valute[from];
+                    var amt = document.getElementById("fromAmount").value;
+                    document.getElementById("toAmount").value = (oneUnit * amt).toFixed(2);
                 }
             }
         }
@@ -42,7 +44,7 @@
     <h2>Currency Converter v.1</h2>
     <table>
         <tr>
-            <td><input id="fromAmount" type="text" size="15" value="1"/></td>
+            <td><input id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency();"/></td>
             <td>
                 <select id="from" onchange="convertCurrency();">
                     <option value="AUD" selected>Австралийский доллар (AUD)</option>

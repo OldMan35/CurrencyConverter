@@ -39,11 +39,4 @@ public class DefaultController {
         valuteValue = valuteСontent.get(value);//значение валюты для расчета значения конвертации
         return valuteName + " " + valuteValue;
     }
-
-
-//    @RequestMapping ("/index")
-//    public String index() {
-//
-//        return index;
-//    }
 }

@@ -70,7 +70,7 @@ public class Controller extends ParserJson {
 
     //formatted  double resultNominal
     public String resultFormat(double result) {
-        String resultFormatted = String.format("%.5f", result);
+        String resultFormatted = String.format("%.2f", result);
         return resultFormatted;
     }
 
