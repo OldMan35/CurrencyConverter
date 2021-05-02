@@ -19,25 +19,25 @@
             margin: 0px auto;
         }
     </style>
-    <script>
-        function convertCurrency() {
-            var from = document.getElementById("from").value;
-            var to = document.getElementById("to").value;
-            var xmlhttp = new XMLHttpRequest();
-            var url = "https://www.cbr-xml-daily.ru/daily_json.js";
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    var result = xmlhttp.responseText;
-                    var jsResult = JSON.parse(result);
-                    var oneUnit = jsResult.Valute[to] / jsResult.Valute[from];
-                    var amt = document.getElementById("fromAmount").value;
-                    document.getElementById("toAmount").value = (oneUnit * amt).toFixed(2);
-                }
-            }
-        }
-    </script>
+<!--    <script>-->
+<!--        function convertCurrency() {-->
+<!--            var from = document.getElementById("from").value;-->
+<!--            var to = document.getElementById("to").value;-->
+<!--            var xmlhttp = new XMLHttpRequest();-->
+<!--            var url = "https://www.cbr-xml-daily.ru/daily_json.js";-->
+<!--            xmlhttp.open("GET", url, true);-->
+<!--            xmlhttp.send();-->
+<!--            xmlhttp.onreadystatechange = function () {-->
+<!--                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {-->
+<!--                    var result = xmlhttp.responseText;-->
+<!--                    var jsResult = JSON.parse(result);-->
+<!--                    var oneUnit = jsResult.Valute[to] / jsResult.Valute[from];-->
+<!--                    var amt = document.getElementById("fromAmount").value;-->
+<!--                    document.getElementById("toAmount").value = (oneUnit * amt).toFixed(2);-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
 </head>
 <body onload="convertCurrency();">
 <div id="box">
