@@ -1,12 +1,11 @@
 package ru.currencyconverter;
 
-import ru.currencyconverter.ParserJson;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 
-public class Controller extends ParserJson {
+public class Amount extends ParserJson {
     private String firstValue;
     private String secondValue;
     private double valueController;
@@ -74,95 +73,5 @@ public class Controller extends ParserJson {
     public String resultFormat(double result) {
         String resultFormatted = String.format("%.2f", result);
         return resultFormatted;
-    }
-
-
-    public String getFirstValue() {
-
-        return firstValue;
-    }
-
-    public void setFirstValue(String firstValue) {
-
-        this.firstValue = firstValue;
-    }
-
-    public double getValueController() {
-
-        return valueController;
-    }
-
-    public void setValueController(double valueController) {
-
-        this.valueController = valueController;
-    }
-
-    public String getValuteNameController() {
-
-        return valuteNameController;
-    }
-
-    public void setValuteNameController(String valuteNameController) {
-        this.valuteNameController = valuteNameController;
-    }
-
-    public void setValuteNominalController(int valuteNominalController) {
-        this.valuteNominalController = valuteNominalController;
-    }
-
-    public double getSecondValueValuteController() {
-
-        return secondValueValuteController;
-    }
-
-    public void setSecondValueValuteController(double secondValueValuteController) {
-        this.secondValueValuteController = secondValueValuteController;
-    }
-
-    public String getSecondNameValuteController() {
-
-        return secondNameValuteController;
-    }
-
-    public void setSecondNameValuteController(String secondNameValuteController) {
-        this.secondNameValuteController = secondNameValuteController;
-    }
-
-    public long getSecondNominalValuteController() {
-
-        return secondNominalValuteController;
-    }
-
-    public void setSecondNominalValuteController(long secondNominalValuteController) {
-        this.secondNominalValuteController = secondNominalValuteController;
-    }
-
-    public String getFirsValue() {
-        return firstValue;
-    }
-
-    public void setFirsValue(String firsValue) {
-
-        this.firstValue = firsValue;
-    }
-
-    public String getSecondValue() {
-
-        return secondValue;
-    }
-
-    public void setSecondValue(String secondValue) {
-
-        this.secondValue = secondValue;
-    }
-
-    public long secondNominalValuteController() {
-
-        return secondNominalValuteController;
-    }
-
-    public long getValuteNominalController() {
-
-        return valuteNominalController;
     }
 }
