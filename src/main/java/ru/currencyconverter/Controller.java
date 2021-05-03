@@ -1,5 +1,7 @@
 package ru.currencyconverter;
 
+import ru.currencyconverter.ParserJson;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

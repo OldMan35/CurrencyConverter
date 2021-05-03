@@ -1,16 +1,15 @@
-package ru.currencyconverter;
+package ru.currencyconverter.controller;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 import java.io.InputStream;
 import java.net.URL;
-import java.util.Date;
 
-@RestController
+@Controller
 public class DefaultController {
     private String currency = "AUD";
     private final String name = "Name";
