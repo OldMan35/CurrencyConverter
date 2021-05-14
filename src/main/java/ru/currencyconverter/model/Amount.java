@@ -1,4 +1,4 @@
-package ru.currencyconverter;
+package ru.currencyconverter.model;
 
 
 import java.io.BufferedReader;
