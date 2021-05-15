@@ -19,13 +19,21 @@
             margin: 0px auto;
         }
     </style>
+
+
+<!--    <form th:method="POST" th:action="@{/ }" th:object="${person}">-->
+<!--        <label for="name">Enter name: </label>-->
+<!--        <input type="text" th:field="*{name}" id="name">-->
+<!--        <br/>-->
+<!--        <input type="submit" value="Create!"/>-->
+<!--    </form>-->
 </head>
 <body onload="convertCurrency();">
 <div id="box">
     <h2>Currency Converter v.1</h2>
     <table>
         <tr>
-            <td><input id="fromAmount" type="text" size="15" value="1" onkeyup="convertCurrency();"/></td>
+            <td><input type="text" th:value="${fromAmount}" id="fromAmount"  size="15"/></td>
             <td>
                 <select id="from" onchange="convertCurrency();">
                     <option value="AUD" selected>Австралийский доллар (AUD)</option>
@@ -37,7 +45,7 @@
             </td>
         </tr>
         <tr>
-            <td><input id="toAmount" type="text" size="15" disabled/></td>
+            <td><input type="text" th:value="${toAmount}" id="toAmount"  size="15" disabled/></td>
             <td>
                 <select id="to" onchange="convertCurrency();">
                     <option value="AUD">Австралийский доллар (AUD)</option>
