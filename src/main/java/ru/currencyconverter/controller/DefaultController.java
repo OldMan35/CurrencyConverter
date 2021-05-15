@@ -17,9 +17,9 @@ public class DefaultController {
     }
 
     @PostMapping()
-    public String convert(@RequestParam("fromAmount") String fromAmount, @RequestParam("toAmount") String toAmount) {
-
-        System.out.println(fromAmount + toAmount);
+    public String convert(@RequestParam("fromAmount") String fromAmount, Model model) {
+        String toAmount = fromAmount;
+        model.addAttribute("toAmount", toAmount);
         return "redirect:/";
     }
 }

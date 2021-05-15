@@ -21,45 +21,36 @@
     </style>
 
 
-<!--    <form th:method="POST" th:action="@{/ }" th:object="${person}">-->
-<!--        <label for="name">Enter name: </label>-->
-<!--        <input type="text" th:field="*{name}" id="name">-->
-<!--        <br/>-->
-<!--        <input type="submit" value="Create!"/>-->
-<!--    </form>-->
+    <!--    <form th:method="POST" th:action="@{/ }" th:object="${person}">-->
+    <!--        <label for="name">Enter name: </label>-->
+    <!--        <input type="text" th:field="*{name}" id="name">-->
+    <!--        <br/>-->
+    <!--        <input type="submit" value="Create!"/>-->
+    <!--    </form>-->
 </head>
-<body onload="convertCurrency();">
+<body>
 <div id="box">
     <h2>Currency Converter v.1</h2>
-    <table>
+    <table th:method="POST" th:action="@{/}">
         <tr>
-            <td><input type="text" th:value="${fromAmount}" id="fromAmount"  size="15"/></td>
+            <td><input type="text" th:value="${fromAmount}" id="fromAmount" size="15"/></td>
             <td>
-                <select id="from" onchange="convertCurrency();">
-                    <option value="AUD" selected>Австралийский доллар (AUD)</option>
-                    <option value="AZN">Азербайджанский манат (AZN)</option>
-                    <option value="GBP">Фунт стерлингов Соединенного королевства (GBP)</option>
-                    <option value="AMD">Армянских драмов (AMD)</option>
-                    <option value="BYN">Белорусский рубль (BYN)</option>
+                <select id="from">
+                    <option th:value="AUD">Австралийский доллар (AUD)</option>
                 </select>
             </td>
         </tr>
         <tr>
-            <td><input type="text" th:value="${toAmount}" id="toAmount"  size="15" disabled/></td>
+            <td><input type="text" th:value="${toAmount}" id="toAmount" size="15" disabled/></td>
             <td>
-                <select id="to" onchange="convertCurrency();">
-                    <option value="AUD">Австралийский доллар (AUD)</option>
-                    <option value="AZN" selected>Азербайджанский манат (AZN)</option>
-                    <option value="GBP">Фунт стерлингов Соединенного королевства (GBP)</option>
-                    <option value="AMD">Армянских драмов (AMD)</option>
-                    <option value="BYN">Белорусский рубль (BYN)</option>
+                <select id="to">
+                    <option th:value="AZN">Азербайджанский манат (AZN)</option>
                 </select>
             </td>
         </tr>
+        <div style="text-align: center;"/>
+        <input type="submit" value="Convert"/>
     </table>
-    <div style="text-align: center;"/>
-    <input type="submit" value="Convert"/>
 </div>
-
 </body>
 </html>
