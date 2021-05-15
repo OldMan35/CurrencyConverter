@@ -6,6 +6,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.HashMap;
 
 
 public class ParserJson {
@@ -19,7 +20,7 @@ public class ParserJson {
     private Object valuteName;
     private Object valuteValue;
 
-    public void parser() throws Exception {
+    public HashMap<String, String> parser() throws Exception {
 
         URL url = new URL("https://www.cbr-xml-daily.ru/daily_json.js");//Создает объект URL с путем к странице
         InputStream input = url.openStream();//Получает InputStream у интернет-объекта
@@ -33,6 +34,7 @@ public class ParserJson {
         valuteNominal = valuteСontent.get(nominal);//получаем номинал валюты
         valuteName = valuteСontent.get(name);//название валюты для вывода пользователю
         valuteValue = valuteСontent.get(value);//значение валюты для расчета значения конвертации
+        return null;
     }
 
     public void setCurrency(String currency) {

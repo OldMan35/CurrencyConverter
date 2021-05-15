@@ -1,11 +1,20 @@
-package ru.currencyconverter.model;
+package ru.currencyconverter.dao;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.springframework.stereotype.Component;
+import ru.currencyconverter.model.ParserJson;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.HashMap;
 
-
-public class Amount extends ParserJson {
+@Component
+public class ValuteDAO extends ParserJson {
     private String firstValue;
     private String secondValue;
     private double valueController;
@@ -14,6 +23,29 @@ public class Amount extends ParserJson {
     private double secondValueValuteController;
     private String secondNameValuteController;
     private long secondNominalValuteController;
+    private String currency;
+    private Object valuteNominal;
+    private Object valuteName;
+    private Object valuteValue;
+
+
+    public HashMap<String, String> parser() throws Exception {
+
+        URL url = new URL("https://www.cbr-xml-daily.ru/latest.js");//Создает объект URL с путем к странице
+        InputStream input = url.openStream();//Получает InputStream у интернет-объекта
+        byte[] buffer = input.readAllBytes();//Читает все байты и возвращает массив байт
+        String strings = new String(buffer);//Преобразуем массив в строку
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(strings);// парсим строку
+        JSONObject jsonObject = (JSONObject) obj;//получаем объект JSON
+        JSONObject jsonObjectContent = (JSONObject) jsonObject.get("rates");
+        String stringObjectContent = jsonObjectContent.toString();
+        ObjectMapper mapper = new ObjectMapper();
+        HashMap<String, String> rates = mapper.readValue(stringObjectContent, new TypeReference<>() {
+        });
+        return rates;
+    }
+
 
     public void conversionCurrency() throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
