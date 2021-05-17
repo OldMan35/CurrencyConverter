@@ -3,56 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Currency Converter</title>
-    <style>
-        #box {
-            width: 500px;
-            height: 150px;
-            margin: 5% auto;
-            border: 5px solid black;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        table {
-            margin: 0px auto;
-        }
-    </style>
-
-
-    <!--    <form th:method="POST" th:action="@{/ }" th:object="${person}">-->
-    <!--        <label for="name">Enter name: </label>-->
-    <!--        <input type="text" th:field="*{name}" id="name">-->
-    <!--        <br/>-->
-    <!--        <input type="submit" value="Create!"/>-->
-    <!--    </form>-->
 </head>
 <body>
-<div id="box">
-    <h2>Currency Converter v.1</h2>
-    <table th:method="POST" th:action="@{/}">
-        <form>
-            <tr>
-                <td><input type="text" th:value="${fromAmount}" id="fromAmount" size="15"/></td>
-                <td>
-                    <select id="from">
-                        <option th:value="AUD">Австралийский доллар (AUD)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="text" th:value="${toAmount}" id="toAmount" size="15" disabled/></td>
-                <td>
-                    <select id="to">
-                        <option th:value="AZN">Азербайджанский манат (AZN)</option>
-                    </select>
-                </td>
-            </tr>
-            <div style="text-align: center;"/>
-            <input type="submit" value="Convert"/>
-        </form>
-    </table>
-</div>
+<div style="text-align: center;"/>
+<h2>Currency Converter v.1</h2>
+<form th:method="POST" th:action="@{/ }" th:oblect="${valute}">
+    <label for="value">Enter amount: </label>
+    <input type="text" th:field="*{value}" id="value" size="15"/>
+    <select th:field="*{from}">
+        <option th:value="${AUD}">Австралийский доллар (AUD)</option>
+    </select>
+    <label for="toAmount">Converted amount: </label>
+    <input type="text" th:field="*{toAmount}" id="toAmount" size="15" disabled/>
+    <select th:field="*{to}">
+        <option th:value="${AZN}">Азербайджанский манат (AZN)</option>
+    </select>
+    <input type="submit" value="Convert"/>
+</form>
 </body>
 </html>
