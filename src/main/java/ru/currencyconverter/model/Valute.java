@@ -8,8 +8,7 @@ public class Valute {
 
     }
 
-    public Valute(String id, int value) {
-        this.id = id;
+    public Valute(int value) {
         this.value = value;
     }
 

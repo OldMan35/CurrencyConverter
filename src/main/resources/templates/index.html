@@ -32,24 +32,26 @@
 <div id="box">
     <h2>Currency Converter v.1</h2>
     <table th:method="POST" th:action="@{/}">
-        <tr>
-            <td><input type="text" th:value="${fromAmount}" id="fromAmount" size="15"/></td>
-            <td>
-                <select id="from">
-                    <option th:value="AUD">Австралийский доллар (AUD)</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" th:value="${toAmount}" id="toAmount" size="15" disabled/></td>
-            <td>
-                <select id="to">
-                    <option th:value="AZN">Азербайджанский манат (AZN)</option>
-                </select>
-            </td>
-        </tr>
-        <div style="text-align: center;"/>
-        <input type="submit" value="Convert"/>
+        <form>
+            <tr>
+                <td><input type="text" th:value="${fromAmount}" id="fromAmount" size="15"/></td>
+                <td>
+                    <select id="from">
+                        <option th:value="AUD">Австралийский доллар (AUD)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" th:value="${toAmount}" id="toAmount" size="15" disabled/></td>
+                <td>
+                    <select id="to">
+                        <option th:value="AZN">Азербайджанский манат (AZN)</option>
+                    </select>
+                </td>
+            </tr>
+            <div style="text-align: center;"/>
+            <input type="submit" value="Convert"/>
+        </form>
     </table>
 </div>
 </body>

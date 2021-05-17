@@ -32,18 +32,11 @@ public class ValuteDAO {
     }
 
 
-    public String conversion(String id, String value) throws Exception {
+    public void conversion(String idFrom, int value, String idTo) throws Exception {
         HashMap<String, String> rates = parser();
-        Valute valute = new Valute();
-        int number = Integer.parseInt(rates.get(id));//get rates valute
-
-
-        return "";
+        int oneNumber = Integer.parseInt(rates.get(idFrom));//get first valute rates from hashmap
+        int twoNumber = Integer.parseInt(rates.get(idTo));//get two valute rates from hashmap
+        int result = 1 / oneNumber * twoNumber;
+        Valute valute = new Valute(result);//set model view
     }
-
-//    //formatted  double resultNominal
-//    public String resultFormat(double result) {
-//        String resultFormatted = String.format("%.2f", result);
-//        return resultFormatted;
-//    }
 }
