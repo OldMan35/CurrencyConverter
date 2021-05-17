@@ -35,6 +35,7 @@ public class ValuteDAO {
     public String conversion(String id, String value) throws Exception {
         HashMap<String, String> rates = parser();
         Valute valute = new Valute();
+        int number = Integer.parseInt(rates.get(id));//get rates valute
 
 
         return "";
