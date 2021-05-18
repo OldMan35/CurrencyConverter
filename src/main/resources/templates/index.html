@@ -11,12 +11,12 @@
     <label for="value">Enter amount: </label>
     <input type="text" th:field="*{value}" id="value" size="15"/>
     <select th:field="*{from}">
-        <option th:value="${AUD}">Австралийский доллар (AUD)</option>
+        <option th:value="*{AUD}">Австралийский доллар (AUD)</option>
     </select>
     <label for="toAmount">Converted amount: </label>
-    <input type="text" th:field="*{toAmount}" id="toAmount" size="15" disabled/>
+    <input type="text" th:field="${toAmount}" id="toAmount" size="15" disabled/>
     <select th:field="*{to}">
-        <option th:value="${AZN}">Азербайджанский манат (AZN)</option>
+        <option th:value="*{AZN}">Азербайджанский манат (AZN)</option>
     </select>
     <input type="submit" value="Convert"/>
 </form>
