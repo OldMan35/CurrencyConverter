@@ -31,7 +31,7 @@ public class ValuteDAO {
     }
 
 
-    public Double conversion(String idFrom, double value, String idTo) throws Exception {
+    public Double conversion(double value, String idFrom, String idTo) throws Exception {
         HashMap<String, String> rates = parser();
         double oneNumber = Double.parseDouble(rates.get(idFrom));//get first valute rates from hashmap
         double twoNumber = Double.parseDouble(rates.get(idTo));//get two valute rates from hashmap
