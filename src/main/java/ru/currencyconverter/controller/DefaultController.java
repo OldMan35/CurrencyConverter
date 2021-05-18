@@ -18,16 +18,16 @@ public class DefaultController {
     }
 
     @GetMapping("/")
-    public String homePage(Model model) throws Exception {
-        double result = valuteDAO.conversion("EUR", 5000, "JPY");
-        model.addAttribute("result", result);
+    public String homePage() {
+//        double result = valuteDAO.conversion("EUR", 5000, "JPY");
+//        model.addAttribute("result", result);
         return "index";
     }
 
-//    @PostMapping("/")
-//    public String convert(@RequestParam("value") double value, @RequestParam("idFrom") String idFrom, @RequestParam("idTo") String idTo, Model model) throws Exception {
-//        double toAmount = valuteDAO.conversion(idFrom, value, idTo);
-//        model.addAttribute("toAmount", toAmount);
-//        return "redirect:/";
-//    }
+    @PostMapping("/")
+    public String convert(@RequestParam double value, @RequestParam String idFrom, @RequestParam String idTo, Model model) throws Exception {
+        double toAmount = valuteDAO.conversion(idFrom, value, idTo);
+        model.addAttribute("toAmount", toAmount);
+        return "index";
+    }
 }
