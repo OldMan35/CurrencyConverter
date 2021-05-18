@@ -1,7 +1,8 @@
 package ru.currencyconverter.model;
 
 public class Valute {
-    private String id; //"AUD" etc.
+    private String idTo; //"AUD" etc.
+    private String idFrom;//"AUD" etc.
     private double value; //57.2883
 
     public Valute() {
@@ -9,16 +10,18 @@ public class Valute {
     }
 
     public Valute(double value) {
+
         this.value = value;
     }
 
-    public String getId() {
-        return id;
+    public String getIdTo() {
+
+        return idTo;
     }
 
-    public void setId(String id) {
+    public void setIdTo(String idTo) {
 
-        this.id = id;
+        this.idTo = idTo;
     }
 
     public double getValue() {
@@ -29,5 +32,13 @@ public class Valute {
     public void setValue(double value) {
 
         this.value = value;
+    }
+
+    public String getIdFrom() {
+        return idFrom;
+    }
+
+    public void setIdFrom(String idFrom) {
+        this.idFrom = idFrom;
     }
 }
