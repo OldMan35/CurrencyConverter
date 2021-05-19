@@ -7,18 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.currencyconverter.dao.ValuteDAO;
+import ru.currencyconverter.model.Valute;
 
 
 @Controller
 public class DefaultController {
     private final ValuteDAO valuteDAO;
+    private Valute valute;
 
     public DefaultController(ValuteDAO valuteDAO) {
         this.valuteDAO = valuteDAO;
     }
 
     @GetMapping("/")
-    public String homePage() {
+    public String homePage(Model model) {
+
+        model.addAttribute("valute", new Valute());
 //        double result = valuteDAO.conversion("EUR", 5000, "JPY");
 //        model.addAttribute("result", result);
         return "index";

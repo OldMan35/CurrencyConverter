@@ -6,7 +6,7 @@ public class Valute {
     private double value; //57.2883
 
     public Valute() {
-
+        super();
     }
 
     public Valute(double value) {

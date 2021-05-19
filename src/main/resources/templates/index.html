@@ -11,7 +11,7 @@
 <!--<p th:text="${result}">-->
 
 
-<form th:method="POST" th:action="@{/ }" th:object="${valute}">
+<form action="index.html" th:action="@{/index.html}" th:object="${valute}" method="POST">
     <label for="value">Enter amount: </label>
     <input type="text" th:field="*{value}" id="value" size="15"/>
     <select th:field="*{from}">
