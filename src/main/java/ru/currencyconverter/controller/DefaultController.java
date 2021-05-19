@@ -1,12 +1,11 @@
 package ru.currencyconverter.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import ru.currencyconverter.dao.ValuteDAO;
 import ru.currencyconverter.model.Valute;
 
@@ -24,20 +23,17 @@ public class DefaultController {
 
     @GetMapping("/")
     public String homePage() {
+
         return "index";
     }
 
     @PostMapping()
-    public String convert(@RequestParam("value") double value, @RequestParam("idFrom") String idFrom, @RequestParam("idTo") String idTo, Model model) throws Exception {
-        valute.setIdFrom(idFrom);
-        valute.setIdTo(idTo);
+    public String convert(@ModelAttribute("valute") double value) throws Exception {
+//        valute.setIdFrom("USD");
+//        valute.setIdTo("EUR");
         valute.setValue(value);
-        double toAmount = valuteDAO.conversion();
-        model.addAttribute("toAmount", toAmount);
+//        double toAmount = valuteDAO.conversion();
+//        model.addAttribute("toAmount", toAmount);
         return "redirect:/";
-    }
-
-    public void setValute(Valute valute) {
-        this.valute = valute;
     }
 }

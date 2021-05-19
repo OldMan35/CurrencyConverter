@@ -7,18 +7,31 @@
 <body>
 <div style="text-align: center;"/>
 <h2>Currency Converter</h2>
-<form th:method="POST" th:action="@{/}" th:object="valute">
+<form th:method="POST" th:action="@{/}" th:object="${valute}">
     <label for="value">Enter amount: </label>
     <input type="text" th:field="*{value}" id="value" size="15"/>
-    <select th:field="*{idFrom}">
-        <option th:id="${AUD}">Австралийский доллар (AUD)</option>
-    </select>
-    <label for="toAmount">Converted amount: </label>
-    <input type="text" th:field="*{toAmount}" id="toAmount" size="15" disabled/>
-    <select th:field="*{idTo}">
-        <option th:id="${AZN}">Азербайджанский манат (AZN)</option>
-    </select>
-    <input type="submit" value="convert">
+
+    <p th:text="${toAmount}"></p>
+
+<!--    <form th:method="POST" th:action="@{/ }" th:object="${person}">-->
+<!--        <label for="name">Enter name: </label>-->
+<!--        <input type="text" th:field="*{name}" id="name">-->
+<!--        <br/>-->
+<!--        <input type="submit" value="Create!"/>-->
+<!--    </form>-->
+
+
+    <!--    <label for="value">Enter amount: </label>-->
+    <!--    <input type="text" th:field="*{value}" id="value" size="15"/>-->
+    <!--    <select th:field="*{idFrom}">-->
+    <!--        <option th:id="${AUD}">Австралийский доллар (AUD)</option>-->
+    <!--    </select>-->
+    <!--    <label for="toAmount">Converted amount: </label>-->
+    <!--    <input type="text" th:field="*{toAmount}" id="toAmount" size="15" disabled/>-->
+    <!--    <select th:field="*{idTo}">-->
+    <!--        <option th:id="${AZN}">Азербайджанский манат (AZN)</option>-->
+    <!--    </select>-->
+        <input type="submit" value="convert">
 </form>
 </body>
 </html>
