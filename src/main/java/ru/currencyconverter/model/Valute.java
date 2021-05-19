@@ -11,7 +11,7 @@ public class Valute {
 
     public String getIdFrom() {
 
-        return idFrom;
+        return this.idFrom;
     }
 
     public void setIdFrom(String idFrom) {
