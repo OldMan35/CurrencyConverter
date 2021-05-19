@@ -4,7 +4,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import ru.currencyconverter.model.Valute;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -12,6 +14,7 @@ import java.util.HashMap;
 
 @Component
 public class ValuteDAO {
+    private Valute valute;
 
     public HashMap<String, String> parser() throws Exception {
 
@@ -31,11 +34,11 @@ public class ValuteDAO {
     }
 
 
-    public Double conversion(String idFrom, double value, String idTo) throws Exception {
+    public Double conversion() throws Exception {
         HashMap<String, String> rates = parser();
-        double oneNumber = Double.parseDouble(rates.get(idFrom));//get first valute rates from hashmap
-        double twoNumber = Double.parseDouble(rates.get(idTo));//get two valute rates from hashmap
-        double result = 1 / oneNumber * twoNumber * value;
+        double oneNumber = Double.parseDouble(rates.get(valute.getIdFrom()));//get first valute rates from hashmap
+        double twoNumber = Double.parseDouble(rates.get(valute.getIdTo()));//get two valute rates from hashmap
+        double result = 1 / oneNumber * twoNumber * valute.getValue();
         return result;
     }
 }
