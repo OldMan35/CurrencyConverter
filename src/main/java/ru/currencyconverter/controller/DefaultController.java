@@ -27,13 +27,9 @@ public class DefaultController {
         return "index";
     }
 
-    @PostMapping()
-    public String convert(@ModelAttribute("valute") double value) throws Exception {
-//        valute.setIdFrom("USD");
-//        valute.setIdTo("EUR");
-        valute.setValue(value);
-//        double toAmount = valuteDAO.conversion();
-//        model.addAttribute("toAmount", toAmount);
+    @PostMapping("/")
+    public String convert() {
+
         return "redirect:/";
     }
 }
