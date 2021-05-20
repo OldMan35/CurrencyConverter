@@ -13,8 +13,6 @@ import java.util.HashMap;
 
 @Component
 public class ValuteDAO {
-    private Valute valute;
-
 
     public HashMap<String, String> parser() throws Exception {
 
@@ -33,9 +31,9 @@ public class ValuteDAO {
         return rates;
     }
 
-
     public Double conversion() throws Exception {
         HashMap<String, String> rates = parser();
+        Valute valute = new Valute();
         double oneNumber = Double.parseDouble(rates.get(valute.getIdFrom()));//get first valute rates from hashmap
         double twoNumber = Double.parseDouble(rates.get(valute.getIdTo()));//get two valute rates from hashmap
         double result = 1 / oneNumber * twoNumber * valute.getValue();

@@ -30,10 +30,12 @@ public class Valute {
     }
 
     public String getIdTo() {
+
         return idTo;
     }
 
     public void setIdTo(String idTo) {
+
         this.idTo = idTo;
     }
 }
