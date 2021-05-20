@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class DefaultController {
 
-    @GetMapping("/")
+    @GetMapping("/home_page")
     public String homePage() {
-        return "convertion_form";
+        return "home_page";
     }
 
-    @PostMapping("/")
+    @PostMapping("/conversion_form")
     public String convert() {
 
-        return "/";
+        return "/conversion_form";
     }
 
     @GetMapping("/result")
