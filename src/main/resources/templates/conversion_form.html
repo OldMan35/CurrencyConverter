@@ -8,24 +8,24 @@
 <div style="text-align: center;">
     <h2>Conversion Form</h2>
     <form th:action="@{/conversion_form}" th:object="${valute}" method="post">
-<!--        <div>-->
+        <div>
             <label>Enter amount: </label>
             <input type="text" th:field="*{value}"/>
-<!--        </div>-->
-<!--        <div>-->
-<!--            <select th:field="*{idFrom}">-->
-<!--                <option th:each="idFrom : ${idFrom}"-->
-<!--                        th:value="${AUD}">Австралийский доллар (AUD)-->
-<!--                </option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <select th:field="*{idTo}">-->
-<!--                <option th:each="idTo : ${idTo}"-->
-<!--                        th:value="${AZN}">Азербайджанский манат (AZN)-->
-<!--                </option>-->
-<!--            </select>-->
-<!--        </div>-->
+        </div>
+        <div>
+            <select th:field="*{idFrom}">
+                <option th:each="idFrom : ${idFrom}"
+                        th:value="${AUD}" th:text="${}"Австралийский доллар (AUD)>
+                </option>
+            </select>
+        </div>
+        <div>
+            <select th:field="*{idTo}">
+                <option th:each="idTo : ${idTo}"
+                        th:value="${AZN}">Азербайджанский манат (AZN)
+                </option>
+            </select>
+        </div>
         <div>
             <input type="submit" value="convert">
         </div>

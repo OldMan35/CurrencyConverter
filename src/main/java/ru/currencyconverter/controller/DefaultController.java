@@ -12,6 +12,7 @@ public class DefaultController {
 
     @GetMapping("/home_page")
     public String homePage() {
+
         return "home_page";
     }
 
@@ -25,13 +26,12 @@ public class DefaultController {
     @PostMapping("/conversion_form")
     @RequestMapping(value = "/conversion_form", method = RequestMethod.POST)
     public String convert(@ModelAttribute("valute") Valute valute) {
-
+        System.out.println(valute);
         return "/result";
     }
 
     @GetMapping("/result")
     public String resultConvert() {
-
         return "result";
     }
 }
