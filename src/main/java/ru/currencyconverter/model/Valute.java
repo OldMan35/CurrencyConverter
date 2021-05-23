@@ -6,7 +6,6 @@ public class Valute {
     private String idTo;//"AUD" etc.
     private String idFrom;//"EUR" etc.
 
-
     public Valute() {
 
     }
@@ -35,14 +34,5 @@ public class Valute {
     public void setValue(double value) {
 
         this.value = value;
-    }
-
-    @Override
-    public String toString() {
-        return "Valute{" +
-                "value=" + value +
-                ", idTo='" + idTo + '\'' +
-                ", idFrom='" + idFrom + '\'' +
-                '}';
     }
 }

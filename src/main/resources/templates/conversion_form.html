@@ -10,24 +10,20 @@
     <form th:action="@{/conversion_form}" th:object="${valute}" method="post">
         <label>Enter amount: </label>
         <input type="text" th:field="*{value}"/>
-        <!--        <input type="text" th:field="*{idFrom}"/>-->
-        <!--        <input type="text" th:field="*{idTo}"/>-->
-        <p>
-            <select th:field="*{valute}">
-                <option th:value="'AUD'" th:text="Австралийский доллар"></option>
-                <option th:value="'AZN'" th:text="Азербайджанский манат"></option>
-            </select>
-        </p>
-        <select th:field="*{valute}">
-            <option th:value="'AUD'" th:text="Австралийский доллар"></option>
-            <option th:value="'AZN'" th:text="Азербайджанский манат"></option>
-        </select>
-        <p>
-            <select size="1">
-                <option value="AUD">Австралийский доллар</option>
-                <option selected value="AZN">Азербайджанский манат</option>
-            </select>
-        </p>
+        <input type="text" th:field="*{idFrom}"/>
+        <input type="text" th:field="*{idTo}"/>
+        <!--        <p>-->
+        <!--            <select th:field="*{valute}"> тут выдает ошибку!!!!!-->
+        <!--                <option th:value="'AUD'" th:text="Австралийский доллар"></option>-->
+        <!--                <option th:value="'AZN'" th:text="Азербайджанский манат"></option>-->
+        <!--            </select>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <select th:field="*{valute}">-->
+        <!--                <option th:value="'AUD'" th:text="Австралийский доллар"></option>-->
+        <!--                <option th:value="'AZN'" th:text="Азербайджанский манат"></option>-->
+        <!--            </select>-->
+        <!--        </p>-->
         <input type="submit" value="convert">
     </form>
 </div>

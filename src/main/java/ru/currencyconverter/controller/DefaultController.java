@@ -35,8 +35,7 @@ public class DefaultController {
     @PostMapping("/conversion_form")
     @RequestMapping(value = "/conversion_form", method = RequestMethod.POST)
     public String convert(@ModelAttribute("valute") Valute valute) {
-        valuteDAO.save(valute);
-        System.out.println(valute);
+        valuteDAO.getVolume(valute);
         return "redirect:/result";
     }
 

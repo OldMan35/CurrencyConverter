@@ -9,6 +9,7 @@ import ru.currencyconverter.model.Valute;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 @Component
@@ -34,15 +35,17 @@ public class ValuteDAO {
         return rates;
     }
 
-    public Double conversion() throws Exception {
+    public String conversion() throws Exception {
         HashMap<String, String> rates = parser();
         double oneNumber = Double.parseDouble(rates.get(idFrom));//get first valute rates from hashmap
         double twoNumber = Double.parseDouble(rates.get(idTo));//get two valute rates from hashmap
-        double result = 1 / oneNumber * twoNumber * value;
+        double convert = 1 / oneNumber * twoNumber * value;
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String result = decimalFormat.format(convert);
         return result;
     }
 
-    public void save(Valute valute) {
+    public void getVolume(Valute valute) {
         idFrom = valute.getIdFrom();
         idTo = valute.getIdTo();
         value = valute.getValue();
