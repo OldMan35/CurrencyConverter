@@ -8,31 +8,27 @@
 <div style="text-align: center;">
     <h2>Conversion Form</h2>
     <form th:action="@{/conversion_form}" th:object="${valute}" method="post">
-        <div>
-            <label>Enter amount: </label>
-            <input type="text" th:field="*{value}"/>
-            <input type="text" th:field="*{idFrom}"/>
-            <input type="text" th:field="*{idTo}"/>
-
-
-<!--        </div>-->
-<!--        <div>-->
-<!--            <select th:field="*{valute}" >-->
-<!--                <option th:each="valute : ${idFrom}"-->
-<!--                        th:value="${idFrom}" th:text="${idFrom.description}">value-->
-<!--                </option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <select th:field="*{idTo}">-->
-<!--                <option th:each="idTo : ${idTo}"-->
-<!--                        th:value="${AZN}">-->
-<!--                </option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--        <div>-->
-            <input type="submit" value="convert">
-        </div>
+        <label>Enter amount: </label>
+        <input type="text" th:field="*{value}"/>
+        <!--        <input type="text" th:field="*{idFrom}"/>-->
+        <!--        <input type="text" th:field="*{idTo}"/>-->
+        <p>
+            <select th:field="*{valute}">
+                <option th:value="'AUD'" th:text="Австралийский доллар"></option>
+                <option th:value="'AZN'" th:text="Азербайджанский манат"></option>
+            </select>
+        </p>
+        <select th:field="*{valute}">
+            <option th:value="'AUD'" th:text="Австралийский доллар"></option>
+            <option th:value="'AZN'" th:text="Азербайджанский манат"></option>
+        </select>
+        <p>
+            <select size="1">
+                <option value="AUD">Австралийский доллар</option>
+                <option selected value="AZN">Азербайджанский манат</option>
+            </select>
+        </p>
+        <input type="submit" value="convert">
     </form>
 </div>
 </body>
