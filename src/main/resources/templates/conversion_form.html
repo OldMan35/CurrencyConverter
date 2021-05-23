@@ -11,22 +11,26 @@
         <div>
             <label>Enter amount: </label>
             <input type="text" th:field="*{value}"/>
-        </div>
-        <div>
-            <select th:field="*{idFrom}">
-                <option th:each="idFrom : ${idFrom}"
-                        th:value="${AUD}" th:text="${}"Австралийский доллар (AUD)>
-                </option>
-            </select>
-        </div>
-        <div>
-            <select th:field="*{idTo}">
-                <option th:each="idTo : ${idTo}"
-                        th:value="${AZN}">Азербайджанский манат (AZN)
-                </option>
-            </select>
-        </div>
-        <div>
+            <input type="text" th:field="*{idFrom}"/>
+            <input type="text" th:field="*{idTo}"/>
+
+
+<!--        </div>-->
+<!--        <div>-->
+<!--            <select th:field="*{valute}" >-->
+<!--                <option th:each="valute : ${idFrom}"-->
+<!--                        th:value="${idFrom}" th:text="${idFrom.description}">value-->
+<!--                </option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <select th:field="*{idTo}">-->
+<!--                <option th:each="idTo : ${idTo}"-->
+<!--                        th:value="${AZN}">-->
+<!--                </option>-->
+<!--            </select>-->
+<!--        </div>-->
+<!--        <div>-->
             <input type="submit" value="convert">
         </div>
     </form>

@@ -1,21 +1,29 @@
 package ru.currencyconverter.model;
 
 public class Valute {
-    private String idFrom; //"AUD" etc.
-    private String idTo;//"EUR" etc.
+
     private double value; //57.2883
+    private String idTo;//"AUD" etc.
+    private String idFrom;//"EUR" etc.
+
 
     public Valute() {
 
     }
 
-    public String getIdFrom() {
+    public String getIdTo() {
+        return idTo;
+    }
 
-        return this.idFrom;
+    public void setIdTo(String idTo) {
+        this.idTo = idTo;
+    }
+
+    public String getIdFrom() {
+        return idFrom;
     }
 
     public void setIdFrom(String idFrom) {
-
         this.idFrom = idFrom;
     }
 
@@ -29,22 +37,12 @@ public class Valute {
         this.value = value;
     }
 
-    public String getIdTo() {
-
-        return idTo;
-    }
-
-    public void setIdTo(String idTo) {
-
-        this.idTo = idTo;
-    }
-
     @Override
     public String toString() {
         return "Valute{" +
-                "idFrom='" + idFrom + '\'' +
+                "value=" + value +
                 ", idTo='" + idTo + '\'' +
-                ", value=" + value +
+                ", idFrom='" + idFrom + '\'' +
                 '}';
     }
 }
