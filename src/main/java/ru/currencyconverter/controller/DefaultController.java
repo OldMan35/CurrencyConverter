@@ -35,7 +35,6 @@ public class DefaultController {
     }
 
     @PostMapping("/conversion_form")
-
     public String convert(@ModelAttribute("valute") Valute valute) {
         valuteDAO.getVolume(valute);
         return "redirect:/result";
