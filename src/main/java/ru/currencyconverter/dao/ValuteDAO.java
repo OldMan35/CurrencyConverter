@@ -46,8 +46,8 @@ public class ValuteDAO {
     }
 
     public void getVolume(Valute valute) {
-        idFrom = valute.getIdFrom();
-        idTo = valute.getIdTo();
+        idFrom = valute.getSelectFirstCurrency();
+        idTo = valute.getSelectSecondCurrency();
         value = valute.getValue();
     }
 

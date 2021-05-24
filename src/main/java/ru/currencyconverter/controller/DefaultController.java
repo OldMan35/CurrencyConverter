@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import ru.currencyconverter.dao.ValuteDAO;
 import ru.currencyconverter.model.Valute;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 @Controller
 public class DefaultController {
@@ -16,22 +19,21 @@ public class DefaultController {
         this.valuteDAO = valuteDAO;
     }
 
-    //done
     @GetMapping("/home")
     public String homePage() {
 
         return "home_page";
     }
 
-    //done
     @GetMapping("/conversion_form")
     public String showForm(Model model) {
         Valute valute = new Valute();
         model.addAttribute("valute", valute);
+        List<String> valuteName = Arrays.asList("AUD", "EUR", "AZN", "HKD", "DKK", "CAD", "USD");
+        model.addAttribute("valuteName", valuteName);
         return "/conversion_form";
     }
 
-    //done
     @PostMapping("/conversion_form")
     @RequestMapping(value = "/conversion_form", method = RequestMethod.POST)
     public String convert(@ModelAttribute("valute") Valute valute) {
@@ -39,7 +41,6 @@ public class DefaultController {
         return "redirect:/result";
     }
 
-    //done
     @GetMapping("/result")
     public String resultConvert(Model model) throws Exception {
         model.addAttribute("idFrom", valuteDAO.getIdFrom());
