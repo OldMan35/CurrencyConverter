@@ -6,20 +6,21 @@
 </head>
 <body>
 <div style="text-align: center;">
-    <h2>Conversion Form</h2>
+    <h2>Conversion form</h2>
     <form th:action="@{/conversion_form}" th:object="${valute}" method="post">
-        <label>Enter amount: </label>
-        <input type="text" th:field="*{value}"/><br>
-        <!--        <input type="text" th:field="*{idFrom}"/>-->
-        <!--        <input type="text" th:field="*{idTo}"/>-->
-        <label>Select a first currency for converting:</label>
+        <div style="display: inline-block; background-color: #8c8c8c; color: #ffffff;">Enter amount:</div>
+        <input type="text" th:field="*{value}" />
+        <br>
+        <div style="display: inline-block; background-color: #8c8c8c; color: #ffffff;">Select a first currency for converting:</div>
         <select th:field="*{selectFirstCurrency}">
             <option th:each="v : ${valuteName}" th:value="${v}" th:text="${v}"/>
-        </select><br>
-        <label>Select a second currency for converting:</label>
+        </select>
+        <br>
+        <div style="display: inline-block; background-color: #8c8c8c; color: #ffffff;">Select a second currency for converting:</div>
         <select th:field="*{selectSecondCurrency}">
             <option th:each="v : ${valuteName}" th:value="${v}" th:text="${v}"/>
-        </select><br>
+        </select>
+        <br>
         <input type="submit" value="convert">
     </form>
 </div>

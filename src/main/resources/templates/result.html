@@ -5,14 +5,16 @@
     <meta charset="utf-8"/>
 </head>
 <body>
-<h2>Currency conversion result</h2>
-<div>
-    <label>from: </label>
-    <p th:text="${idFrom}">value</p>
-    <label>to: </label>
-    <p th:text="${idTo}">value</p>
-    <label>amount is: </label>
-    <p th:text="${result}">value</p>
+<div style="text-align: center;">
+    <h2>Currency conversion result:</h2>
+    <div style="display: inline-block; background-color: #8c8c8c; color: #ffffff;">From:</div>
+    <span th:text="${idFrom}" id="idFrom">value</span>
+    <br>
+    <div style="display: inline-block; background-color: #8c8c8c; color: #ffffff;">To:</div>
+    <span th:text="${idTo}">value</span>
+    <br>
+    <div style="display: inline-block; background-color: #8c8c8c; color: #ffffff;">Amount is:</div>
+    <span th:text="${result}">value</span>
 </div>
 </body>
 </html>

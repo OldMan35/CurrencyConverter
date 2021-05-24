@@ -40,7 +40,7 @@ public class ValuteDAO {
         double oneNumber = Double.parseDouble(rates.get(idFrom));//get first valute rates from hashmap
         double twoNumber = Double.parseDouble(rates.get(idTo));//get two valute rates from hashmap
         double convert = 1 / oneNumber * twoNumber * value;
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        DecimalFormat decimalFormat = new DecimalFormat("#.###");
         String result = decimalFormat.format(convert);
         return result;
     }
